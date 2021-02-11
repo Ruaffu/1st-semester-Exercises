@@ -5,7 +5,7 @@ color green = color(0, 255, 0);
 color black = color(0, 0, 0);
 color grey = color(150, 150, 150);
 boolean redLight = true;
-boolean greenLight = false;
+
 
 void setup() {
   size(200, 500);
