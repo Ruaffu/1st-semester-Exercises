@@ -8,7 +8,6 @@ if (happy)
 {
   println("Hi my name is " + name);//2a
   println("I am " + age); //2b
-  println("i clap my hands");
-} else if(sad == false){
+} else if(!sad){
   println("i dont clap my hands");
 }
