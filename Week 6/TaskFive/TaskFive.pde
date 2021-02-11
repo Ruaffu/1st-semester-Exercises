@@ -38,10 +38,10 @@ void MethodTwo()
     weekend = true;
   }
 
-  while (weekDay < 7) {
+  while (weekDay < 5) {
 
     // Print the name of the weekday here: 
-    if (weekDay == 0)
+    if (weekDay <= 0)
     {
       println("Monday");
     } else if (weekDay == 1) {
@@ -52,16 +52,13 @@ void MethodTwo()
       println("Thursday");
     } else if (weekDay == 4) {
       println("Friday");
-    } else if (weekDay == 5) {
-      println("Saturday");
-    } else if (weekDay == 6) {
-      println("Sunday");
+      weekend = true;
     }
     weekDay++;
   }
 
   // Print if it is weekend here:
-  if (weekend == true)
+  if (weekend)
   {
     println("Weekend");
   }
