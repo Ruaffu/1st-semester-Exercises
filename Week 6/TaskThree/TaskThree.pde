@@ -58,23 +58,23 @@ void draw() {
   }
 }
 
-void mousePressed() {
-  //Green off
-  fill(150);
-  ellipse(100, 400, 125, 125);
+//void mousePressed() {
+//  //Green off
+//  fill(150);
+//  ellipse(100, 400, 125, 125);
   
-  //Yellow on
-  fill(yellow);
-  ellipse(100, 250, 125, 125);
-  oldTime = time;
-  red = true;
-}
+//  //Yellow on
+//  fill(yellow);
+//  ellipse(100, 250, 125, 125);
+//  oldTime = time;
+//  red = true;
+//}
 
-void keyPressed() {
-  //Yellow on
-  fill(yellow);
-  ellipse(100, 250, 125, 125);
+//void keyPressed() {
+//  //Yellow on
+//  fill(yellow);
+//  ellipse(100, 250, 125, 125);
   
-  oldTime = time;
-  green = true;
+//  oldTime = time;
+//  green = true;
 }
