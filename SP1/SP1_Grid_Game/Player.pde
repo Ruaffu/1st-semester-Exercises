@@ -5,7 +5,6 @@ class Player
   int type = 3; 
   int health; 
   int score;
-  boolean up, down, left, right;
 
   Player(int x, int y)
   {
