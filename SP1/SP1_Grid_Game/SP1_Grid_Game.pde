@@ -10,15 +10,10 @@ Food food[] = new Food[4];
 void setup()
 {
   size(1001, 1001);
+  frameRate(20);
   player = new Player(3, 4);
-
-  for (int i = 0; i < enemys.length; i++) {
-    enemys[i] = new Enemy((int)random(0, grid.length), (int)random(0, grid[0].length), player);
-  }
-
-  for (int i = 0; i < food.length; i++) {
-    food[i] = new Food((int)random(0, grid.length), (int)random(0, grid[0].length), player);
-  }
+  initializeEnemys();
+  initializeFood();
 }
 
 void draw()
@@ -107,7 +102,7 @@ color getColorFromType(int type)
     c = color(0, 255, 0);
     break;
   case 3: 
-    c = color(100, 255, 240);
+    c = color(0, 255, 0);
     break;
   case 4: 
     c = color (64, 116, 255);
@@ -156,8 +151,24 @@ void ui()
   // Score
   stroke(0);
   fill(255, 100);
-  rect(500, 5, 100, 40);
+  rect(600, 5, 100, 40);
   textSize(20);
   fill(252, 232, 5);
-  text("Score: " + player.score, 505, 30);
+  text("Score: " + player.score, 605, 30);
+}
+
+//this method initializes the enemys
+void initializeEnemys()
+{
+  for (int i = 0; i < enemys.length; i++) {
+    enemys[i] = new Enemy((int)random(0, grid.length), (int)random(0, grid[0].length), player);
+  }
+}
+
+//this method initializes the food
+void initializeFood()
+{
+  for (int i = 0; i < food.length; i++) {
+    food[i] = new Food((int)random(0, grid.length), (int)random(0, grid[0].length), player);
+  }
 }
