@@ -10,6 +10,7 @@ class Enemy
     this.x = x;
     this.y = y;
     this.player = player;
+    
   }
 
   // prevents ArrayIndexOutOfBoundsException. 
