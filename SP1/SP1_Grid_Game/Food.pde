@@ -23,6 +23,7 @@ class Food
 
   void moveAwayFromPlayer()
   {
+
     // random chance (~25% chance) for at enemy flytter sig i en tilfældig retning.
     if (Math.random() < 0.25)
     {
