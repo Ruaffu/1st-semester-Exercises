@@ -1,6 +1,7 @@
 
 int size = 40;
-int[][] grid = new int[25][25];
+int gridSize = 25;
+int[][] grid = new int[gridSize][gridSize];
 
 Player player;
 Enemy enemys[] = new Enemy[4];
@@ -9,7 +10,6 @@ Food food[] = new Food[4];
 void setup()
 {
   size(1001, 1001);
-  frameRate(24);
   player = new Player(3, 4);
 
   for (int i = 0; i < enemys.length; i++) {
@@ -29,6 +29,7 @@ void draw()
   resolveCollisions();
   ui();
   isGameOver();
+  player.playerMove();
 }
 
 
@@ -73,6 +74,7 @@ void resolveCollisions()
   }
 }
 
+// update player, enemys and food
 void updateEntities()
 {
   grid[player.x][player.y] = player.type;
@@ -132,7 +134,7 @@ void isGameOver()
     fill(0);
     rect(0, 0, 1000, 1000);
     textSize(50);
-    fill(255);
+    fill(250, 0, 0);
     text("Game Over the Final Score is: "+ player.score, 100, height/2);
     stop();
   }
@@ -143,44 +145,19 @@ void ui()
 {
   // Health bar
   stroke(0);
-  fill(255, 200);
-  rect(200, 5, 100, 40);
-  fill(200, 0, 0, 200);
-  rect(200, 5, player.health, 40);
+  fill(255, 100);
+  rect(300, 5, 100, 40);
+  fill(250, 0, 0, 200);
+  rect(300, 5, player.health, 40);
   textSize(20);
   fill(0);
-  text("Health", 201, 30);
+  text("Health", 305, 30);
 
   // Score
   stroke(0);
-  fill(255, 200);
-  rect(400, 5, 100, 40);
+  fill(255, 100);
+  rect(500, 5, 100, 40);
   textSize(20);
-  fill(0);
-  text("Score: " + player.score, 401, 30);
-}
-
-// player controls
-void keyPressed()
-{
-  if (key == 'w')
-  {
-    if (player.y == grid.length/30)return;
-    player.y--;
-  }
-  if (key == 'a')
-  {
-    if (player.x == grid.length/30)return;
-    player.x--;
-  }
-  if (key == 's')
-  {
-    if (player.y == grid.length - grid.length/25)return;
-    player.y++;
-  }
-  if (key == 'd')
-  {
-    if (player.x == grid.length - grid.length/25)return;
-    player.x++;
-  }
+  fill(252, 232, 5);
+  text("Score: " + player.score, 505, 30);
 }
