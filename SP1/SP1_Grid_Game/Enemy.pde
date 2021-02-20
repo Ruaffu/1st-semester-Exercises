@@ -12,20 +12,23 @@ class Enemy
     this.player = player;
   }
 
+  // prevents ArrayIndexOutOfBoundsException. 
+  void outOfBounds()
+  {
+    for (int i = 0; i < enemys.length; i++) {
+      enemys[i].x = constrain(enemys[i].x, 0, 24);
+      enemys[i].y = constrain(enemys[i].y, 0, 24);
+    }
+  }
 
+  // Enemy units follow player around the grid
   void MoveTowardsPlayer()
   { 
-
-
     // random chance (~25% chance) for at enemy flytter sig i en tilfældig retning.
-
-
     if (Math.random() < 0.25)
     {
-      int randomMoveX = (int)random(25);
-      int randomMoveY = (int)random(25);
-      this.x = randomMoveX;
-      this.y = randomMoveY;
+      this.x = (int)random(25);
+      this.y = (int)random(25);
     }  
 
     int xDistance = Math.abs(player.x - this.x);
@@ -33,13 +36,6 @@ class Enemy
 
     if (xDistance < yDistance)
     {
-
-      // prevents ArrayIndexOutOfBoundsException. 
-      if (x == grid.length - grid.length/25)return;
-      if (x == grid.length/30)return;
-      if (y == grid.length - grid.length/25)return;
-      if (y == grid.length/30)return;
-
       if (player.x < this.x) {
         this.x -= 1;
       } else if (player.x > this.x) {
@@ -49,6 +45,7 @@ class Enemy
       } else if (player.y > this.y) {
         this.x += 1;
       }
+      outOfBounds();
     }
   }
 }
