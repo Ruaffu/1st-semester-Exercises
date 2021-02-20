@@ -130,12 +130,13 @@ void isGameOver()
     rect(0, 0, 1000, 1000);
     textSize(50);
     fill(250, 0, 0);
-    text("Game Over the Final Score is: "+ player.score, 100, height/2);
+    text("Fatality!", 400, 400);
+    text("Game over the final score is: "+ player.score, 100, height/2);
     stop();
   }
 }
 
-// healthbar and score 
+// health bar and score 
 void ui()
 {
   // Health bar
