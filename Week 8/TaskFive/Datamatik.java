@@ -1,9 +1,8 @@
 class Datamatik{
 	
 	static Student[] students = new Student[10];
+
 	public static void main(String[] args){
-    	
-		
 		
 		students[0] = new Student("Christian", 35, false, 'A');
 		students[1] = new Student("Bob", 30, false, 'A');
@@ -16,15 +15,13 @@ class Datamatik{
 		students[8] = new Student("Snape", 25, false, 'A');
 		students[9] = new Student("Harry", 22, false, 'B');
 
-		
-		
-
 		printStudentName(students, 0);
-		//printStudentIndex();
-
+		findStudentIndex(students, "Bob");
+		findStudentIndex(students, "Snape");
 
   }
 
+  	// b
   	public static String printStudentName(Student[] students, int index){
 
 	    System.out.println("student at index "+ index + " is "+ students[index].name);
@@ -33,15 +30,18 @@ class Datamatik{
 		
 	}
 
-	public static string printStudentIndex(studentArray[] students, String studentName){
+	// c
+	public static String findStudentIndex(Student[] students, String studentName){
 		
+		for (int i = 0; i < students.length; i++) {
+			
+			if (students[i].name.contains(studentName)) {
+				System.out.println(students[i].name + " has an index of: " + i);
+			}
+			
+		}
+		return studentName;
 		
 	}
-	
-
-
-
-
-
 
 }
