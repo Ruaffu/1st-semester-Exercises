@@ -1,36 +1,45 @@
 class Datamatik{
+	
+	static Student[] students = new Student[10];
 	public static void main(String[] args){
     	
-		Student student1 = new Student("Christian", 35, false, 'A');
-		Student student2 = new Student("Peter", 20, false, 'A');
-		Student student3 = new Student("Christian", 19, false, 'A');
-		Student student4 = new Student("Mads", 41, false, 'A');
-		Student student5 = new Student("Rabee", 48, false, 'A');
-		Student student6 = new Student("Angeliza", 25, true, 'A');
-		Student student7 = new Student("Louise", 23, true, 'A');
-		Student student8 = new Student("Victoria", 20, true, 'A');
-		Student student9 = new Student("Philippe", 25, false, 'A');
-		Student student10 = new Student("Oliver", 22, false, 'A');
+		
+		
+		students[0] = new Student("Christian", 35, false, 'A');
+		students[1] = new Student("Bob", 30, false, 'A');
+		students[2] = new Student("Nils", 19, false, 'B');
+		students[3] = new Student("Anders", 41, false, 'A');
+		students[4] = new Student("Hans", 45, false, 'B');
+		students[5] = new Student("Hermione", 25, true, 'A');
+		students[6] = new Student("Luna", 25, true, 'B');
+		students[7] = new Student("Victoria", 28, true, 'B');
+		students[8] = new Student("Snape", 25, false, 'A');
+		students[9] = new Student("Harry", 22, false, 'B');
 
 		
-		Student[] studentArray = {student1, student2, student3, student4, student5, student6, student7, student8, student9, student10};
+		
 
-		printStudentName();
-		printStudentIndex();
+		printStudentName(students, 0);
+		//printStudentIndex();
 
 
   }
 
-  public static string printStudentName(studentArray[] students, int index){
-		
+  	public static String printStudentName(Student[] students, int index){
+
+	    System.out.println("student at index "+ index + " is "+ students[index].name);
+
+	    return students[index].name;
 		
 	}
 
-  public static string printStudentIndex(studentArray[] students, String studentName){
+	public static string printStudentIndex(studentArray[] students, String studentName){
 		
 		
 	}
 	
+
+
 
 
 
