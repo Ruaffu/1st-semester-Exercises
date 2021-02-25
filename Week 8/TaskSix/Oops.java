@@ -12,7 +12,7 @@ public class Oops {
     int a = 7, b = 42;
 
     if (minimum(a,b) == a) {
-      System.out.println("a is the smallest!");
+      System.out.println(a + " is the smallest!");
     }
   }
   public static int minimum(int a, int b) {
