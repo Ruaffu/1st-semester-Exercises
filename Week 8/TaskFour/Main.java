@@ -49,18 +49,4 @@ class Main{
 		return average;
 	}
 
-	// e
-/*	public static int sortedIntArray(int[] intArray){
-		for (int i = 0; i < intArray.length; i++) {
-			for (int j = 0; j < intArray.length; j++) {
-				int tmp = 0;
-				if (intArray[i] > intArray[j]) {
-					tmp = intArray[i];
-					intArray[i] = intArray[j];
-					intArray[j] = tmp;
-				}
-			}
-		}
-	} 
-*/
 }
